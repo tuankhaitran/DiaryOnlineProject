@@ -1,0 +1,32 @@
+@font-face {
+  font-family: InkFree;
+  src: url("src/assets/fonts/Inkfree.ttf");
+  font-weight: bold;}
+
+  @font-face {
+    font-family: FreeStyle;
+    src: url("src/assets/fonts/FREESCPT.ttf");
+    font-weight: bold;}
+
+    @font-face {
+      font-family: Gabriola;
+      src: url("src/assets/fonts/Gabriola.ttf");
+      font-weight: bold;}
+
+mat-spinner {
+  margin: auto;
+}
+
+.container, .user-heading{
+  margin: auto;
+  width: 50%;
+  /* border: 3px solid green; */
+  padding: 10px;
+  text-align: center;
+  line-height: 50px;
+}
+mat-form-field,
+textarea {
+  width: 100%;
+}
+

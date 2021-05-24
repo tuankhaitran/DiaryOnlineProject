@@ -1,0 +1,24 @@
+
+
+<div class="wrapper">
+  <input type="checkbox" name="nav-check" id="nav-check" />
+
+  <section class="sec-home" id="sec-home">
+    <router-outlet></router-outlet>
+  </section>
+
+
+  <nav role="navigation">
+    <label for="nav-check"></label>
+    <ul class= "navigation">
+      <app-navigation></app-navigation>
+    </ul>
+
+    <!-- <ul class="navigation">
+      <li><a href="#sec-home">home</a></li>
+      <li><a href="#sec-about">about</a></li>
+      <li><a href="#sec-portfolio">portfolio</a></li>
+      <li><a href="#sec-contact">contact</a></li>
+    </ul> -->
+  </nav>
+</div>

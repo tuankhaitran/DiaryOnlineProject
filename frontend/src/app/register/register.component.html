@@ -1,0 +1,123 @@
+
+<body>
+  <!-- partial:index.partial.html -->
+  <!-- Mixins-->
+  <!-- Pen Title-->
+
+  <div class="container">
+    <div class="card"></div>
+    <div class="card">
+      <h1 class="title">Register</h1>
+      <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+
+        <div class="input-container">
+          <input type="text" id="email" required [pattern]="emailRegex" formControlName="email">
+          <label for="email">Email</label>
+          <br><br>
+          <div *ngIf="email.invalid && email.touched">
+            <small *ngIf ="email.errors?.required">Email is required</small>
+          </div>
+          <small *ngIf ="email.errors?.pattern">Email does not have right format</small>
+        </div>
+
+        <div class="input-container">
+          <input type="text" id="username" [class.is-invalid]="username.invalid && username.touched" required formControlName="username">
+          <label for="username">Full Name</label>
+        <br><br>
+        <div *ngIf="username.invalid && username.touched">
+          <small *ngIf="username.errors?.required"> Full name is required</small>
+          <small *ngIf="username.errors?.forbiddenName"> {{username.errors?.forbiddenName.value}} this name is not allowed </small>
+        </div>
+        </div>
+
+        <div class="input-container">
+          <input type="password" id="password" [class.is-invalid]="password.invalid && password.touched" required formControlName="password" >
+          <label for="password">Password</label>
+          <br><br>
+
+          <small *ngIf ="password.errors?.minlength">Password should have atleast 6 characters</small>
+          <div *ngIf="password.invalid && password.touched">
+          <small *ngIf ="password.errors?.required">Password is required</small>
+        </div>
+        </div>
+
+        <div class="input-container">
+          <input type="password" id="repeat" [class.is-invalid]="registrationForm.errors?.misMatch" required formControlName="confirmPassword" >
+          <label for="repeat">Repeat Password</label>
+          <br><br>
+          <small *ngIf ="registrationForm.errors?.misMatch">Password do not match</small>
+        </div>
+
+
+        <div>
+          <button type="submit" class="btn-primary" [disabled]='!registrationForm.valid'><span>Register</span></button>
+        </div>
+      </form>
+      <div class ="warning" *ngIf="showSucessMessage" >
+        Save succesfully
+      </div>
+      <div class ="warning" *ngIf="serverErrorMessages">
+        {{ serverErrorMessages }}
+      </div>
+    </div>
+
+
+
+
+
+    <div class="card alt">
+      <div class="toggle"></div>
+
+    </div>
+
+
+    <!-- <div class="card"></div>
+    <div class="card">
+      <h1 class="title">Register</h1>
+      <form #userForm="ngForm">
+        <div class="input-container">
+          <input type="text" id="username" #name="ngModel" [class.is-invalid]="name.invalid && name.touched" required name='username' [(ngModel)]="userModel.username">
+          <label for="username">Username</label>
+        <br><br>
+          <small [class.d-none]="name.valid || name.untouched">Name is required</small>
+
+        </div>
+
+        <div class="input-container">
+          <input type="password" id="password" required="required" name='password' [(ngModel)]="userModel.password">
+          <label for="#password">Password</label>
+          <br><br>
+          <small>Password is required</small>
+        </div>
+        <div class="input-container">
+          <input type="password" id="repeat" required="required" name='repeat' [(ngModel)]="userModel.repeat">
+          <label for="repeat">Repeat Password</label>
+          <br><br>
+          <small>Password do not match</small>
+
+        </div>
+        <div class="input-container">
+          <input type="email" id="email" required="required" name='email' [(ngModel)]="userModel.email">
+          <label for="email">Email</label>
+          <br><br>
+          <small>Email is required</small>
+        </div>
+        <div class="button-container">
+          <button><span>Register</span></button>
+        </div>
+      </form>
+    </div>
+
+
+    <div class="card alt">
+      <div class="toggle"></div>
+
+    </div> -->
+
+  </div>
+
+    <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script> -->
+    <!-- <script  src="src/assets/scripts/script.js"></script> -->
+
+  </body>
+

@@ -1,0 +1,11 @@
+@font-face {
+  font-family: InkFree;
+  src: url("src/assets/fonts/Inkfree.ttf");
+  font-weight: bold;}
+
+li{
+  font-family:InkFree;
+
+}
+
+
